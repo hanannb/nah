@@ -235,9 +235,8 @@ const pages = {
     essays:    { label: 'essays',    winTitle: 'nah.hannan — essays',    words: ['essays', 'longer reads', 'probability', 'geometry'],    prompt: 'six pieces on probability, geometry, markets, and what generative art taught me about all three.' },
     library:   { label: 'library',   winTitle: 'nah.hannan — library',   words: ['library', 'books', 'reading list'],                    prompt: 'books i have read and have something to say about. click to expand.' },
     tinkering: { label: 'tinkering', winTitle: 'nah.hannan — tinkering', words: ['tinkering', 'small builds', 'math art'],               prompt: 'things built to understand how they work. some finished, some not.' },
-    sign:      { label: 'sign',      winTitle: 'nah.hannan — sign',      words: ['sign', 'leave something', 'equations welcome'],        prompt: 'leave an equation. it stays.' },
     puzzle:    { label: '▒',         winTitle: 'nah.hannan — singular',  words: ['singular', 'σ₂ = 0', 'rank collapse'],                prompt: 'drag σ₂ to zero.' },
     project:   { label: 'research',  winTitle: 'nah.hannan — research',  words: ['project', 'the details', 'under the hood'],           prompt: '' },
 };
 
-const navOrder = ['research', 'essays', 'library', 'tinkering', 'sign'];
+const navOrder = ['research', 'essays', 'library', 'tinkering'];
