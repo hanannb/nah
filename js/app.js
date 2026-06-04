@@ -104,6 +104,34 @@
     function renderFeed(key, entries) {
         const el = $('page-' + key);
         if (!el) return;
+
+        if (key === 'essays') {
+            const rows = entries.map(e => {
+                const body = (typeof essayBodies !== 'undefined' && essayBodies[e.id]) || '';
+                const subtitle = e.subtitle ? `<span class="essay-subtitle">${esc(e.subtitle)}</span>` : '';
+                const detail = body ? `
+                    <div class="entry-detail">
+                        <div class="essay-meta">
+                            <span class="tag">[${esc(e.tag)}]</span>
+                            <span class="tag">${esc(e.readTime)}</span>
+                        </div>
+                        ${subtitle}
+                        <p class="essay-lede">${esc(e.lede)}</p>
+                        <div class="essay-body">${body}</div>
+                    </div>` : '';
+                return `<div class="entry" data-expandable data-id="${esc(e.id)}">
+                    <div class="row">
+                        <time datetime="${esc(e.date)}">${esc(e.date)}</time>
+                        <span class="title">${esc(e.title)}</span>
+                        <span class="expand-hint">→</span>
+                    </div>
+                    ${detail}
+                </div>`;
+            }).join('');
+            el.innerHTML = `<div class="feed">${rows}</div><p class="promptline">${esc(pages[key].prompt)}</p>`;
+            return;
+        }
+
         const rows = entries.map(e =>
             `<div class="row">
                 <time datetime="${esc(e.date)}">${esc(e.date)}</time>
@@ -638,7 +666,6 @@
 
     function itemCount(key) {
         if (key === 'research')  return researchEntries.length;
-
         if (key === 'essays')    return essayEntries.length;
         if (key === 'library')   return books.length;
         if (key === 'tinkering') return mathArtEntries.length + tinkerEntries.length;
@@ -646,7 +673,7 @@
     }
 
     function swapPageContent(key, fromNav) {
-
+        if (!pages[key]) key = 'research';
         if (key === currentKey && !fromNav) return;
 
         if (currentKey === 'tinkering') {
