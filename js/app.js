@@ -804,7 +804,6 @@
     renderFeed('essays', essayEntries);
     renderLibrary();
     renderTinkering();
-    renderSign();
     renderPuzzle();
 
     const initial = location.hash.replace('#', '') || 'research';
