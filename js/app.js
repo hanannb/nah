@@ -128,7 +128,8 @@
                     ${detail}
                 </div>`;
             }).join('');
-            el.innerHTML = `<div class="feed">${rows}</div><p class="promptline">${esc(pages[key].prompt)}</p>`;
+            el.innerHTML = `<div class="feed">${rows}</div>`;
+            el.addEventListener('click', handleEntryClick);
             return;
         }
 
@@ -139,7 +140,7 @@
                 <span class="tag">[${esc(e.tag)}]</span>
             </div>`
         ).join('');
-        el.innerHTML = `<div class="feed">${rows}</div><p class="promptline">${esc(pages[key].prompt)}</p>`;
+        el.innerHTML = `<div class="feed">${rows}</div>`;
     }
 
     // ── render: research ──────────────────────────────────────────────────────
@@ -164,7 +165,7 @@
                 </div>`;
             }
         });
-        html += `</div><p class="promptline">${esc(pages.research.prompt)}</p>`;
+        html += `</div>`;
         el.innerHTML = html;
         el.addEventListener('click', e => {
             const entry = e.target.closest('[data-project]');
@@ -178,8 +179,7 @@
         if (!el) return;
         const entry = researchEntries.find(e => e.slug === slug);
         if (!entry || !entry.detail) {
-            el.innerHTML = `<button class="project-back" id="projectBack">← research</button>
-                <p class="promptline">project not found.</p>`;
+            el.innerHTML = `<button class="project-back" id="projectBack">← research</button>`;
             $('projectBack').addEventListener('click', () => transitionToPage('research'));
             return;
         }
@@ -199,8 +199,7 @@
             ${stackHtml}
             ${codeHtml}
             <div class="project-page-body">${parasHtml}</div>
-            ${githubHtml}
-            <p class="promptline">${esc(pages.research.prompt)}</p>`;
+            ${githubHtml}`;
         $('projectBack').addEventListener('click', () => transitionToPage('research'));
     }
 
@@ -280,7 +279,7 @@
         });
         html += '</div>';
 
-        html += `<p class="promptline">${esc(pages.tinkering.prompt)}</p>`;
+        html += ``;
         el.innerHTML = html;
         el.addEventListener('click', handleEntryClick);
     }
@@ -303,7 +302,7 @@
                 </div>`;
             });
         });
-        html += `<p class="promptline">${esc(pages.library.prompt)}</p>`;
+        html += ``;
         el.innerHTML = html;
         el.addEventListener('click', e => {
             const entry = e.target.closest('.book-entry');
@@ -369,8 +368,7 @@
                     <button id="cyberSubmit" class="cyber-btn">&#x21B5;</button>
                 </div>
                 <div class="kbd-hints">[ secret commands: det(a)=0 | source | e^(i&#x03C0;)+1=0 ]</div>
-            </div>
-            <p class="promptline">${esc(pages.sign.prompt)}</p>`;
+            </div>`;
 
         const input  = $('cyberInput');
         const submit = $('cyberSubmit');
