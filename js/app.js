@@ -638,7 +638,7 @@
 
     function itemCount(key) {
         if (key === 'research')  return researchEntries.length;
-        if (key === 'notes')     return notesEntries.length;
+
         if (key === 'essays')    return essayEntries.length;
         if (key === 'library')   return books.length;
         if (key === 'tinkering') return mathArtEntries.length + tinkerEntries.length;
@@ -646,7 +646,7 @@
     }
 
     function swapPageContent(key, fromNav) {
-        if (!pages[key]) key = 'notes';
+
         if (key === currentKey && !fromNav) return;
 
         if (currentKey === 'tinkering') {
@@ -775,7 +775,6 @@
     document.addEventListener('visibilitychange', () => { if (!document.hidden) tickClock(); });
 
     // ── initial render ────────────────────────────────────────────────────────
-    renderFeed('notes', notesEntries);
     renderResearch();
     renderFeed('essays', essayEntries);
     renderLibrary();
@@ -783,6 +782,6 @@
     renderSign();
     renderPuzzle();
 
-    const initial = location.hash.replace('#', '') || 'notes';
+    const initial = location.hash.replace('#', '') || 'research';
     swapPageContent(initial);
 })();
