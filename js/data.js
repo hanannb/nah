@@ -231,11 +231,11 @@ const SEEDED_EQUATIONS = [
 
 // ── page metadata ────────────────────────────────────────────────────────────
 const pages = {
-    research:  { label: 'research',  winTitle: 'nah.hannan — research',  words: ['research', 'open questions', 'live work'],              prompt: 'sovereign credit, applied ML, quantitative finance. some ongoing, some done, some barely started.' },
-    essays:    { label: 'essays',    winTitle: 'nah.hannan — essays',    words: ['essays', 'longer reads', 'probability', 'geometry'],    prompt: 'six pieces on probability, geometry, markets, and what generative art taught me about all three.' },
-    library:   { label: 'library',   winTitle: 'nah.hannan — library',   words: ['library', 'books', 'reading list'],                    prompt: 'books i have read and have something to say about. click to expand.' },
-    tinkering: { label: 'tinkering', winTitle: 'nah.hannan — tinkering', words: ['tinkering', 'small builds', 'math art'],               prompt: 'things built to understand how they work. some finished, some not.' },
-    puzzle:    { label: '▒',         winTitle: 'nah.hannan — singular',  words: ['singular', 'σ₂ = 0', 'rank collapse'],                prompt: 'drag σ₂ to zero.' },
+    research:  { label: 'research',  winTitle: 'nah.hannan — research',  words: ['research', 'open questions', 'live work'],              prompt: '' },
+    essays:    { label: 'essays',    winTitle: 'nah.hannan — essays',    words: ['essays', 'longer reads', 'probability', 'geometry'],    prompt: '' },
+    library:   { label: 'library',   winTitle: 'nah.hannan — library',   words: ['library', 'books', 'reading list'],                    prompt: '' },
+    tinkering: { label: 'tinkering', winTitle: 'nah.hannan — tinkering', words: ['tinkering', 'small builds', 'math art'],               prompt: '' },
+    puzzle:    { label: '▒',         winTitle: 'nah.hannan — singular',  words: ['singular', 'σ₂ = 0', 'rank collapse'],                prompt: '' },
     project:   { label: 'research',  winTitle: 'nah.hannan — research',  words: ['project', 'the details', 'under the hood'],           prompt: '' },
 };
 
