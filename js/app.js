@@ -108,17 +108,12 @@
         if (key === 'essays') {
             const rows = entries.map(e => {
                 const body = (typeof essayBodies !== 'undefined' && essayBodies[e.id]) || '';
-                const subtitle = e.subtitle ? `<span class="essay-subtitle">${esc(e.subtitle)}</span>` : '';
-                const detail = body ? `
-                    <div class="entry-detail">
-                        <div class="essay-meta">
-                            <span class="tag">[${esc(e.tag)}]</span>
-                            <span class="tag">${esc(e.readTime)}</span>
-                        </div>
+                const subtitle = e.subtitle ? `<p class="essay-subtitle">${esc(e.subtitle)}</p>` : '';
+                const detail = `<div class="project-detail">
                         ${subtitle}
-                        <p class="essay-lede">${esc(e.lede)}</p>
+                        <p class="essay-lede"><em>${esc(e.lede)}</em></p>
                         <div class="essay-body">${body}</div>
-                    </div>` : '';
+                    </div>`;
                 return `<div class="entry" data-expandable data-id="${esc(e.id)}">
                     <div class="row">
                         <time datetime="${esc(e.date)}">${esc(e.date)}</time>
@@ -165,7 +160,7 @@
                 </div>`;
             }
         });
-        html += `</div>`;
+        html += `</div><p class="promptline">${esc(pages.research.prompt)}</p>`;
         el.innerHTML = html;
         el.addEventListener('click', e => {
             const entry = e.target.closest('[data-project]');
@@ -179,7 +174,8 @@
         if (!el) return;
         const entry = researchEntries.find(e => e.slug === slug);
         if (!entry || !entry.detail) {
-            el.innerHTML = `<button class="project-back" id="projectBack">← research</button>`;
+            el.innerHTML = `<button class="project-back" id="projectBack">← research</button>
+                <p class="promptline">project not found.</p>`;
             $('projectBack').addEventListener('click', () => transitionToPage('research'));
             return;
         }
@@ -199,7 +195,8 @@
             ${stackHtml}
             ${codeHtml}
             <div class="project-page-body">${parasHtml}</div>
-            ${githubHtml}`;
+            ${githubHtml}
+            <p class="promptline">${esc(pages.research.prompt)}</p>`;
         $('projectBack').addEventListener('click', () => transitionToPage('research'));
     }
 
@@ -368,7 +365,8 @@
                     <button id="cyberSubmit" class="cyber-btn">&#x21B5;</button>
                 </div>
                 <div class="kbd-hints">[ secret commands: det(a)=0 | source | e^(i&#x03C0;)+1=0 ]</div>
-            </div>`;
+            </div>
+            <p class="promptline">${esc(pages.sign.prompt)}</p>`;
 
         const input  = $('cyberInput');
         const submit = $('cyberSubmit');
