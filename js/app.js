@@ -217,7 +217,7 @@
         let html = '';
 
         // ── generative section (p5) ────────────────────────────────────────
-        html += '<div class="lib-category">generative</div>';
+        html += '<div class="lib-category">sketches</div>';
 
         // Featured: Torpid Cabinet — standalone hero
         const featured = p5ArtEntries.find(e => e.featured);
