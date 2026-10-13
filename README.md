@@ -1,6 +1,6 @@
 # nah.hannan
 
-Personal website — [nah-hannan.com](https://nah-hannan.com)
+Research archive stub
 
 ## license
 
