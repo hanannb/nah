@@ -107,7 +107,7 @@
 
         if (key === 'essays') {
             const rows = entries.map(e => {
-                  const body = (typeof essayBodies !== 'undefined' && essayBodies[e.id]) || '';
+                   const body = e.body || '';
                 const subtitle = e.subtitle ? `<p class="essay-subtitle">${esc(e.subtitle)}</p>` : '';
                 const detail = `<div class="project-detail">
                         ${subtitle}
