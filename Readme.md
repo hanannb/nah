@@ -17,10 +17,6 @@ The site collects research notes, essays, an annotated reading list and small ma
 
 Plain HTML, CSS and JavaScript, with no framework and no build step. Content lives in `js/data.js`. The site uses a strict Content Security Policy and has no tracking. It is hosted on GitHub Pages.
 
-## Status
-
-This is a prototype. Some entries are placeholders, and the full essay texts and the RSS feed are not yet working.
-
 ## License
 
 MIT © 2026 Hannan Nabi
