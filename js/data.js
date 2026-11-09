@@ -1,14 +1,5 @@
 // ── CONTENT DATA ─────────────────────────────────────────────────────────────
 
-// ── essays ──────────────────────────────────────────────────────────────────
-const essayEntries = [
-    { date: '2026-05-28', title: 'why tail risk is hard to model',           subtitle: 'and what that means for decision-making',       tag: 'risk',     readTime: '11 min', lede: 'the events we want models for are exactly the events models are worst at.' },
-    { date: '2026-05-12', title: 'the geometry of learning',                 subtitle: 'why hyperbolic space keeps appearing in ML',     tag: 'math',     readTime: '9 min',  lede: 'euclidean space is not a neutral choice. it has a shape, and that shape has consequences.' },
-    { date: '2026-04-20', title: 'what generative art taught me about probability',                                                       tag: 'systems',  readTime: '8 min',  lede: 'the phyllotaxis sketch was the most useful thing i did for my understanding of distributions.' },
-    { date: '2026-04-05', title: "on the difficulty of measuring what you can't see", subtitle: 'latent variables and economic inference', tag: 'stats',    readTime: '10 min', lede: "the most economically interesting quantities are often the ones you can't directly observe." },
-    { date: '2026-03-18', title: 'overfitting as an epistemological problem', subtitle: 'not just a statistical one',                    tag: 'ml',       readTime: '7 min',  lede: "the real problem with overfitting is not that your model fits the training data too well. it's that you trusted it." },
-    { date: '2026-03-01', title: 'macro signals and model uncertainty',       subtitle: 'how ML struggles with non-stationary economies', tag: 'macro',    readTime: '12 min', lede: 'the economy changes the rules as you play. standard ML frameworks were not built for this.' },
-];
 
 // ── research ────────────────────────────────────────────────────────────────
 const researchEntries = [
